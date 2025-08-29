@@ -1,0 +1,61 @@
+mode,alg,bytes,sign_ms,verify_ms,pass,file
+classical,none,740,,,0,out/msg.txt.ecdsa.p7s
+pqc,mldsa65,3309,,Verified OK
+451,1,out/msg.txt.mldsa65.sig
+hybrid,mldsa65,4062,,,0,out/msg.txt.ecdsa+mldsa65.hybrid
+pqc,falcon512,655,,Verified OK
+177,1,out/msg.txt.falcon512.sig
+hybrid,falcon512,1410,,,0,out/msg.txt.ecdsa+falcon512.hybrid
+pqc,sphincssha2128ssimple,7856,,Verified OK
+177,1,out/msg.txt.sphincssha2128ssimple.sig
+hybrid,sphincssha2128ssimple,8607,,,0,out/msg.txt.ecdsa+sphincssha2128ssimple.hybrid
+classical,none,740,,,0,out/payload_10k.bin.ecdsa.p7s
+pqc,mldsa65,3309,,Verified OK
+189,1,out/payload_10k.bin.mldsa65.sig
+hybrid,mldsa65,4060,,,0,out/payload_10k.bin.ecdsa+mldsa65.hybrid
+pqc,falcon512,652,,Verified OK
+178,1,out/payload_10k.bin.falcon512.sig
+hybrid,falcon512,1406,,,0,out/payload_10k.bin.ecdsa+falcon512.hybrid
+pqc,sphincssha2128ssimple,7856,,Verified OK
+214,1,out/payload_10k.bin.sphincssha2128ssimple.sig
+hybrid,sphincssha2128ssimple,8609,,,0,out/payload_10k.bin.ecdsa+sphincssha2128ssimple.hybrid
+classical,none,740,,,0,out/payload_1m.bin.ecdsa.p7s
+pqc,mldsa65,3309,,Verified OK
+208,1,out/payload_1m.bin.mldsa65.sig
+hybrid,mldsa65,4061,,,0,out/payload_1m.bin.ecdsa+mldsa65.hybrid
+pqc,falcon512,653,,Verified OK
+199,1,out/payload_1m.bin.falcon512.sig
+hybrid,falcon512,1408,,,0,out/payload_1m.bin.ecdsa+falcon512.hybrid
+pqc,sphincssha2128ssimple,7856,,Verified OK
+179,1,out/payload_1m.bin.sphincssha2128ssimple.sig
+hybrid,sphincssha2128ssimple,8609,,,0,out/payload_1m.bin.ecdsa+sphincssha2128ssimple.hybrid
+classical,none,742,,,0,out/msg.txt.ecdsa.p7s
+pqc,mldsa65,3309,,Verified OK
+181,1,out/msg.txt.mldsa65.sig
+hybrid,mldsa65,4063,,,0,out/msg.txt.ecdsa+mldsa65.hybrid
+pqc,falcon512,657,,Verified OK
+176,1,out/msg.txt.falcon512.sig
+hybrid,falcon512,1409,,,0,out/msg.txt.ecdsa+falcon512.hybrid
+pqc,sphincssha2128ssimple,7856,,Verified OK
+178,1,out/msg.txt.sphincssha2128ssimple.sig
+hybrid,sphincssha2128ssimple,8609,,,0,out/msg.txt.ecdsa+sphincssha2128ssimple.hybrid
+classical,none,743,,,0,out/payload_10k.bin.ecdsa.p7s
+pqc,mldsa65,3309,,Verified OK
+177,1,out/payload_10k.bin.mldsa65.sig
+hybrid,mldsa65,4061,,,0,out/payload_10k.bin.ecdsa+mldsa65.hybrid
+pqc,falcon512,655,,Verified OK
+179,1,out/payload_10k.bin.falcon512.sig
+hybrid,falcon512,1408,,,0,out/payload_10k.bin.ecdsa+falcon512.hybrid
+pqc,sphincssha2128ssimple,7856,,Verified OK
+180,1,out/payload_10k.bin.sphincssha2128ssimple.sig
+hybrid,sphincssha2128ssimple,8609,,,0,out/payload_10k.bin.ecdsa+sphincssha2128ssimple.hybrid
+classical,none,743,,,0,out/payload_1m.bin.ecdsa.p7s
+pqc,mldsa65,3309,,Verified OK
+181,1,out/payload_1m.bin.mldsa65.sig
+hybrid,mldsa65,4062,,,0,out/payload_1m.bin.ecdsa+mldsa65.hybrid
+pqc,falcon512,653,,Verified OK
+208,1,out/payload_1m.bin.falcon512.sig
+hybrid,falcon512,1408,,,0,out/payload_1m.bin.ecdsa+falcon512.hybrid
+pqc,sphincssha2128ssimple,7856,,Verified OK
+182,1,out/payload_1m.bin.sphincssha2128ssimple.sig
+hybrid,sphincssha2128ssimple,8610,,,0,out/payload_1m.bin.ecdsa+sphincssha2128ssimple.hybrid
