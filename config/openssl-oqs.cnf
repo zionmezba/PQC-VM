@@ -1,8 +1,12 @@
+# PQC-aware OpenSSL profile: loads oqsprovider alongside the default provider.
+#
+# Select it with:  OPENSSL_CONF=/work/config/openssl-oqs.cnf
+# Omit it to get the *legacy* profile (default provider only, no PQC) — that
+# profile is what the legacy-compatibility test in bench/attack.py exercises.
 openssl_conf = openssl_init
 
 [openssl_init]
 providers = provider_sect
-alg_section = algorithm_sect
 
 [provider_sect]
 default = default_sect
@@ -12,9 +16,6 @@ oqsprovider = oqsprovider_sect
 activate = 1
 
 [oqsprovider_sect]
-module = $ENV::OQS_PROVIDER_MODULE
+# Resolved against OPENSSL_MODULES (=/opt/oqs-modules in the container).
+module = oqsprovider
 activate = 1
-
-[algorithm_sect]
-# Ensure non-FIPS by default; adjust as needed
-default_properties = fips=no

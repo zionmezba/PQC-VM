@@ -1,25 +1,37 @@
 SHELL := /usr/bin/env bash
+IMAGE := pqc-vm
+RUN := docker run --rm -v "$(CURDIR)":/work -w /work $(IMAGE)
 
-.PHONY: quickstart keys payloads run all clean
+.PHONY: image shell payloads test quick run figures clean help
 
-quickstart: keys payloads run
-	@echo "\nDone. See results/metrics.csv and out/*.p7s"
+help:
+	@echo "make image      build the container (liboqs + oqs-provider, pinned)"
+	@echo "make payloads   generate data/ at exact sizes"
+	@echo "make test       correctness tests for the hybrid construction"
+	@echo "make quick      smoke run (small n) -- checks wiring, not a result"
+	@echo "make run        full experiment set + figures -> results/"
+	@echo "make shell      interactive shell in the container"
 
-keys:
-	scripts/make_keys.sh
+image:
+	docker build -f .devcontainer/Dockerfile -t $(IMAGE) .
 
-payloads:
-	scripts/gen_payloads.sh
+payloads: image
+	$(RUN) scripts/gen_payloads.sh
 
-run:
-	# base message
-	scripts/collect_metrics.sh data/msg.txt
-	# payload matrix
-	scripts/collect_metrics.sh data/payload_10k.bin
-	scripts/collect_metrics.sh data/payload_1m.bin
-	# 50MB can be heavy in free tiers; uncomment if resources allow
-	# scripts/collect_metrics.sh data/payload_50m.bin
+test: image
+	$(RUN) python -m pytest tests -q
+
+quick: payloads
+	$(RUN) python -m bench.run_all --quick
+
+run: payloads
+	$(RUN) python -m bench.run_all
+
+figures:
+	$(RUN) python -m bench.figures
+
+shell:
+	docker run --rm -it -v "$(CURDIR)":/work -w /work $(IMAGE) bash
 
 clean:
 	rm -rf out results
-	mkdir -p out results
