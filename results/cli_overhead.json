@@ -1,6 +1,6 @@
 {
   "environment": {
-    "timestamp_utc": "2026-09-08T07:18:32.730944+00:00",
+    "timestamp_utc": "2026-09-08T07:27:20.910967+00:00",
     "cpu_model": "12th Gen Intel(R) Core(TM) i7-12700",
     "cpu_count_logical": 20,
     "cpu_scaling": {
@@ -20,79 +20,79 @@
   },
   "rows": [
     {
-      "n": 50,
-      "median_us": 545.0065,
-      "mean_us": 558.6709999999999,
-      "stdev_us": 61.69872715089685,
-      "iqr_us": 65.30975000000001,
-      "p95_us": 676.2122,
-      "min_us": 463.79,
-      "max_us": 777.366,
+      "n": 200,
+      "median_us": 517.1914999999999,
+      "mean_us": 562.539105,
+      "stdev_us": 214.12801146457423,
+      "iqr_us": 71.75699999999995,
+      "p95_us": 773.6614,
+      "min_us": 428.024,
+      "max_us": 2958.118,
       "case": "shell_roundtrip",
       "command": "sh -c true"
     },
     {
-      "n": 50,
-      "median_us": 6755.7615,
-      "mean_us": 6798.76302,
-      "stdev_us": 364.3272218141207,
-      "iqr_us": 429.7285000000011,
-      "p95_us": 7456.0332499999995,
-      "min_us": 6330.063,
-      "max_us": 7968.82,
+      "n": 200,
+      "median_us": 6746.4465,
+      "mean_us": 6815.782715,
+      "stdev_us": 309.9030970378029,
+      "iqr_us": 353.97399999999834,
+      "p95_us": 7390.670549999999,
+      "min_us": 6366.191,
+      "max_us": 8254.812,
       "case": "python3_startup",
       "command": "python3 -c pass"
     },
     {
-      "n": 50,
-      "median_us": 1368.8854999999999,
-      "mean_us": 1388.03518,
-      "stdev_us": 87.7618870689647,
-      "iqr_us": 72.0474999999999,
-      "p95_us": 1491.43855,
-      "min_us": 1262.715,
-      "max_us": 1797.128,
+      "n": 200,
+      "median_us": 1379.6689999999999,
+      "mean_us": 1413.80101,
+      "stdev_us": 164.50474024765865,
+      "iqr_us": 121.952,
+      "p95_us": 1663.8849000000002,
+      "min_us": 1201.497,
+      "max_us": 2719.406,
       "case": "openssl_legacy",
       "command": "openssl version"
     },
     {
-      "n": 50,
-      "median_us": 3362.2619999999997,
-      "mean_us": 4454.2362,
-      "stdev_us": 2516.345484744907,
-      "iqr_us": 3352.2442499999997,
-      "p95_us": 9309.0752,
-      "min_us": 2203.366,
-      "max_us": 13482.36,
+      "n": 200,
+      "median_us": 2800.1925,
+      "mean_us": 4315.655125,
+      "stdev_us": 3163.998736671501,
+      "iqr_us": 1405.8919999999998,
+      "p95_us": 12521.409650000001,
+      "min_us": 2250.789,
+      "max_us": 15625.114,
       "case": "openssl_oqs",
       "command": "openssl version"
     }
   ],
-  "provider_load_cost_us": 1993.3764999999999,
+  "provider_load_cost_us": 1420.5235000000002,
   "inflation_vs_in_process_verify": [
     {
       "algorithm": "ECDSA-P256",
-      "in_process_verify_median_us": 47.567,
-      "single_openssl_invocation_median_us": 1368.8854999999999,
-      "inflation_factor": 28.77804990855004
+      "in_process_verify_median_us": 48.7775,
+      "single_openssl_invocation_median_us": 1379.6689999999999,
+      "inflation_factor": 28.284946953000865
     },
     {
       "algorithm": "ML-DSA-65",
-      "in_process_verify_median_us": 28.033,
-      "single_openssl_invocation_median_us": 1368.8854999999999,
-      "inflation_factor": 48.8312167802233
+      "in_process_verify_median_us": 28.139,
+      "single_openssl_invocation_median_us": 1379.6689999999999,
+      "inflation_factor": 49.030491488681186
     },
     {
       "algorithm": "Falcon-512",
-      "in_process_verify_median_us": 24.856,
-      "single_openssl_invocation_median_us": 1368.8854999999999,
-      "inflation_factor": 55.07263839716768
+      "in_process_verify_median_us": 25.7515,
+      "single_openssl_invocation_median_us": 1379.6689999999999,
+      "inflation_factor": 53.576257693726575
     },
     {
       "algorithm": "SPHINCS+-SHA2-128s-simple",
-      "in_process_verify_median_us": 155.015,
-      "single_openssl_invocation_median_us": 1368.8854999999999,
-      "inflation_factor": 8.830664774376674
+      "in_process_verify_median_us": 147.4735,
+      "single_openssl_invocation_median_us": 1379.6689999999999,
+      "inflation_factor": 9.355368930689242
     }
   ]
 }

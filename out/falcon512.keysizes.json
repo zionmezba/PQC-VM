@@ -1,8 +1,8 @@
 {
   "mechanism": "Falcon-512",
   "ec_public_key_raw_bytes": 65,
-  "ec_certificate_der_bytes": 449,
+  "ec_certificate_der_bytes": 448,
   "pqc_public_key_raw_bytes": 897,
   "pqc_secret_key_raw_bytes": 1281,
-  "pqc_certificate_der_bytes": 1741
+  "pqc_certificate_der_bytes": 1744
 }

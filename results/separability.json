@@ -1,6 +1,6 @@
 {
   "environment": {
-    "timestamp_utc": "2026-09-08T07:19:45.214752+00:00",
+    "timestamp_utc": "2026-09-08T07:28:43.077850+00:00",
     "cpu_model": "12th Gen Intel(R) Core(TM) i7-12700",
     "cpu_count_logical": 20,
     "cpu_scaling": {
@@ -25,15 +25,15 @@
       "mechanism": "ML-DSA-65",
       "mode": "concat",
       "sizes": {
-        "hybrid_cms_bytes": 11584,
-        "classical_only_cms_bytes": 798,
+        "hybrid_cms_bytes": 11587,
+        "classical_only_cms_bytes": 801,
         "pqc_attribute_total_bytes": 10782,
         "pqc_attribute_overhead_bytes": 10786,
         "pqc_signature_raw_bytes": 3309,
         "pqc_public_key_raw_bytes": 1952,
         "pqc_certificate_der_bytes": 5461,
-        "ec_certificate_der_bytes": 448,
-        "ec_signature_der_bytes": 71
+        "ec_certificate_der_bytes": 450,
+        "ec_signature_der_bytes": 72
       },
       "intact": {
         "hybrid_policy": {
@@ -109,34 +109,34 @@
       },
       "latency": {
         "sign_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 724.461,
-          "mean_us": 735.8462,
-          "stdev_us": 32.38924351077069,
-          "iqr_us": 1.8600000000000136,
-          "p95_us": 779.5288,
-          "p99_us": 790.35536,
-          "min_us": 712.776,
-          "max_us": 793.062,
-          "total_wall_s": 0.003683747999730258,
+          "median_us": 781.983,
+          "mean_us": 806.9815450000001,
+          "stdev_us": 109.75186221759118,
+          "iqr_us": 105.12824999999998,
+          "p95_us": 1016.6922999999999,
+          "p99_us": 1239.21576,
+          "min_us": 664.892,
+          "max_us": 1386.856,
+          "total_wall_s": 0.1614852829998199,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         },
         "verify_hybrid_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 224.327,
-          "mean_us": 224.8236,
-          "stdev_us": 3.765271875973894,
-          "iqr_us": 3.1129999999999995,
-          "p95_us": 229.0182,
-          "p99_us": 229.43084,
-          "min_us": 219.46,
-          "max_us": 229.534,
-          "total_wall_s": 0.001127376000113145,
+          "median_us": 236.5745,
+          "mean_us": 252.502305,
+          "stdev_us": 55.72427798028518,
+          "iqr_us": 36.93425000000002,
+          "p95_us": 337.51899999999995,
+          "p99_us": 448.55828,
+          "min_us": 212.785,
+          "max_us": 713.051,
+          "total_wall_s": 0.05058491999989201,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         }
       }
     },
@@ -146,15 +146,15 @@
       "mechanism": "ML-DSA-65",
       "mode": "bound-attr",
       "sizes": {
-        "hybrid_cms_bytes": 11637,
-        "classical_only_cms_bytes": 847,
+        "hybrid_cms_bytes": 11640,
+        "classical_only_cms_bytes": 850,
         "pqc_attribute_total_bytes": 10786,
         "pqc_attribute_overhead_bytes": 10790,
         "pqc_signature_raw_bytes": 3309,
         "pqc_public_key_raw_bytes": 1952,
         "pqc_certificate_der_bytes": 5461,
-        "ec_certificate_der_bytes": 448,
-        "ec_signature_der_bytes": 70
+        "ec_certificate_der_bytes": 450,
+        "ec_signature_der_bytes": 71
       },
       "intact": {
         "hybrid_policy": {
@@ -230,34 +230,34 @@
       },
       "latency": {
         "sign_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 786.836,
-          "mean_us": 799.5758,
-          "stdev_us": 28.821454607635623,
-          "iqr_us": 16.766999999999825,
-          "p95_us": 838.689,
-          "p99_us": 845.745,
-          "min_us": 773.483,
-          "max_us": 847.509,
-          "total_wall_s": 0.004000849000021844,
+          "median_us": 827.3145,
+          "mean_us": 850.525825,
+          "stdev_us": 94.7351328415011,
+          "iqr_us": 107.9475000000001,
+          "p95_us": 1058.6680000000001,
+          "p99_us": 1146.06086,
+          "min_us": 718.807,
+          "max_us": 1297.756,
+          "total_wall_s": 0.1702130110006692,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         },
         "verify_hybrid_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 272.657,
-          "mean_us": 272.1478,
-          "stdev_us": 19.68439156286015,
-          "iqr_us": 24.060000000000002,
-          "p95_us": 295.0354,
-          "p99_us": 297.41748,
-          "min_us": 247.879,
-          "max_us": 298.013,
-          "total_wall_s": 0.0013634019996970892,
+          "median_us": 240.007,
+          "mean_us": 258.165545,
+          "stdev_us": 56.18788505221727,
+          "iqr_us": 34.00650000000002,
+          "p95_us": 347.9289,
+          "p99_us": 520.1166900000001,
+          "min_us": 215.63,
+          "max_us": 556.742,
+          "total_wall_s": 0.05171031600002607,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         }
       }
     },
@@ -267,15 +267,15 @@
       "mechanism": "ML-DSA-65",
       "mode": "bound-digest",
       "sizes": {
-        "hybrid_cms_bytes": 11641,
-        "classical_only_cms_bytes": 849,
+        "hybrid_cms_bytes": 11642,
+        "classical_only_cms_bytes": 850,
         "pqc_attribute_total_bytes": 10788,
         "pqc_attribute_overhead_bytes": 10792,
         "pqc_signature_raw_bytes": 3309,
         "pqc_public_key_raw_bytes": 1952,
         "pqc_certificate_der_bytes": 5461,
-        "ec_certificate_der_bytes": 448,
-        "ec_signature_der_bytes": 72
+        "ec_certificate_der_bytes": 450,
+        "ec_signature_der_bytes": 71
       },
       "intact": {
         "hybrid_policy": {
@@ -305,12 +305,12 @@
         "openssl_legacy": {
           "accepted": false,
           "returncode": 4,
-          "detail": "CMS Verification failure\n802BF2F8F0770000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n802BF2F8F0770000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+          "detail": "CMS Verification failure\n80FBEAA1F2710000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80FBEAA1F2710000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
         },
         "openssl_oqs": {
           "accepted": false,
           "returncode": 4,
-          "detail": "CMS Verification failure\n801B132A33770000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n801B132A33770000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+          "detail": "CMS Verification failure\n805B3F973E710000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n805B3F973E710000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
         }
       },
       "stripped": {
@@ -341,44 +341,44 @@
         "openssl_legacy": {
           "accepted": false,
           "returncode": 4,
-          "detail": "CMS Verification failure\n80BB6DF9DE770000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80BB6DF9DE770000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+          "detail": "CMS Verification failure\n802BE260687C0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n802BE260687C0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
         },
         "openssl_oqs": {
           "accepted": false,
           "returncode": 4,
-          "detail": "CMS Verification failure\n80BB6DD8F6730000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80BB6DD8F6730000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+          "detail": "CMS Verification failure\n80ABB6489E7C0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80ABB6489E7C0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
         }
       },
       "latency": {
         "sign_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 767.613,
-          "mean_us": 761.8464,
-          "stdev_us": 31.892606679291685,
-          "iqr_us": 42.980999999999995,
-          "p95_us": 799.0268,
-          "p99_us": 803.6253599999999,
-          "min_us": 727.757,
-          "max_us": 804.775,
-          "total_wall_s": 0.003811921999840706,
+          "median_us": 816.9580000000001,
+          "mean_us": 842.4225849999999,
+          "stdev_us": 108.62348003524659,
+          "iqr_us": 72.26750000000004,
+          "p95_us": 980.2345,
+          "p99_us": 1164.22992,
+          "min_us": 721.643,
+          "max_us": 1670.407,
+          "total_wall_s": 0.16858283199962898,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         },
         "verify_hybrid_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 229.211,
-          "mean_us": 230.1214,
-          "stdev_us": 5.185305805832476,
-          "iqr_us": 7.581999999999965,
-          "p95_us": 236.23620000000003,
-          "p99_us": 236.70484,
-          "min_us": 224.37,
-          "max_us": 236.822,
-          "total_wall_s": 0.0011532339999575925,
+          "median_us": 239.9435,
+          "mean_us": 257.487525,
+          "stdev_us": 55.68321698183941,
+          "iqr_us": 38.545499999999976,
+          "p95_us": 340.93385,
+          "p99_us": 441.89725999999996,
+          "min_us": 216.554,
+          "max_us": 671.671,
+          "total_wall_s": 0.05157249799958663,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         }
       }
     },
@@ -388,14 +388,14 @@
       "mechanism": "Falcon-512",
       "mode": "concat",
       "sizes": {
-        "hybrid_cms_bytes": 4151,
-        "classical_only_cms_bytes": 798,
-        "pqc_attribute_total_bytes": 3349,
-        "pqc_attribute_overhead_bytes": 3353,
-        "pqc_signature_raw_bytes": 655,
+        "hybrid_cms_bytes": 4152,
+        "classical_only_cms_bytes": 797,
+        "pqc_attribute_total_bytes": 3351,
+        "pqc_attribute_overhead_bytes": 3355,
+        "pqc_signature_raw_bytes": 654,
         "pqc_public_key_raw_bytes": 897,
-        "pqc_certificate_der_bytes": 1741,
-        "ec_certificate_der_bytes": 449,
+        "pqc_certificate_der_bytes": 1744,
+        "ec_certificate_der_bytes": 448,
         "ec_signature_der_bytes": 70
       },
       "intact": {
@@ -472,34 +472,34 @@
       },
       "latency": {
         "sign_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 797.385,
-          "mean_us": 802.2139999999999,
-          "stdev_us": 18.575705208685893,
-          "iqr_us": 25.099000000000046,
-          "p95_us": 825.3024,
-          "p99_us": 827.61488,
-          "min_us": 783.111,
-          "max_us": 828.193,
-          "total_wall_s": 0.004013957999632112,
+          "median_us": 834.509,
+          "mean_us": 853.2141650000001,
+          "stdev_us": 66.70047134824586,
+          "iqr_us": 75.25699999999995,
+          "p95_us": 980.6042,
+          "p99_us": 1041.66104,
+          "min_us": 755.798,
+          "max_us": 1090.762,
+          "total_wall_s": 0.17074892399978125,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         },
         "verify_hybrid_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 213.074,
-          "mean_us": 219.17980000000003,
-          "stdev_us": 12.783853691277914,
-          "iqr_us": 11.939999999999998,
-          "p95_us": 236.61,
-          "p99_us": 239.422,
-          "min_us": 209.54,
-          "max_us": 240.125,
-          "total_wall_s": 0.0010983540000779612,
+          "median_us": 247.7285,
+          "mean_us": 264.504365,
+          "stdev_us": 58.41688892649993,
+          "iqr_us": 46.63300000000001,
+          "p95_us": 393.81659999999994,
+          "p99_us": 490.56153,
+          "min_us": 215.034,
+          "max_us": 561.625,
+          "total_wall_s": 0.05298903900074947,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         }
       }
     },
@@ -509,15 +509,15 @@
       "mechanism": "Falcon-512",
       "mode": "bound-attr",
       "sizes": {
-        "hybrid_cms_bytes": 4206,
-        "classical_only_cms_bytes": 850,
-        "pqc_attribute_total_bytes": 3352,
-        "pqc_attribute_overhead_bytes": 3356,
-        "pqc_signature_raw_bytes": 654,
+        "hybrid_cms_bytes": 4209,
+        "classical_only_cms_bytes": 848,
+        "pqc_attribute_total_bytes": 3357,
+        "pqc_attribute_overhead_bytes": 3361,
+        "pqc_signature_raw_bytes": 656,
         "pqc_public_key_raw_bytes": 897,
-        "pqc_certificate_der_bytes": 1741,
-        "ec_certificate_der_bytes": 449,
-        "ec_signature_der_bytes": 72
+        "pqc_certificate_der_bytes": 1744,
+        "ec_certificate_der_bytes": 448,
+        "ec_signature_der_bytes": 71
       },
       "intact": {
         "hybrid_policy": {
@@ -593,34 +593,34 @@
       },
       "latency": {
         "sign_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 900.647,
-          "mean_us": 946.9028000000001,
-          "stdev_us": 119.5005086964068,
-          "iqr_us": 147.92899999999997,
-          "p95_us": 1103.0312,
-          "p99_us": 1122.29104,
-          "min_us": 841.226,
-          "max_us": 1127.106,
-          "total_wall_s": 0.004737703000046167,
+          "median_us": 862.302,
+          "mean_us": 883.57073,
+          "stdev_us": 64.37254575782924,
+          "iqr_us": 56.27025000000003,
+          "p95_us": 1006.89475,
+          "p99_us": 1109.8779,
+          "min_us": 807.113,
+          "max_us": 1255.122,
+          "total_wall_s": 0.1768033190001006,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         },
         "verify_hybrid_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 236.684,
-          "mean_us": 239.5366,
-          "stdev_us": 13.086666890388862,
-          "iqr_us": 9.692999999999984,
-          "p95_us": 257.133,
-          "p99_us": 260.42260000000005,
-          "min_us": 228.077,
-          "max_us": 261.245,
-          "total_wall_s": 0.001200230999984342,
+          "median_us": 237.22899999999998,
+          "mean_us": 247.967185,
+          "stdev_us": 32.2829134383985,
+          "iqr_us": 28.25000000000003,
+          "p95_us": 310.81415000000004,
+          "p99_us": 385.37059999999997,
+          "min_us": 213.082,
+          "max_us": 430.518,
+          "total_wall_s": 0.04967305099944497,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         }
       }
     },
@@ -630,15 +630,15 @@
       "mechanism": "Falcon-512",
       "mode": "bound-digest",
       "sizes": {
-        "hybrid_cms_bytes": 4204,
-        "classical_only_cms_bytes": 849,
-        "pqc_attribute_total_bytes": 3351,
-        "pqc_attribute_overhead_bytes": 3355,
-        "pqc_signature_raw_bytes": 651,
+        "hybrid_cms_bytes": 4213,
+        "classical_only_cms_bytes": 847,
+        "pqc_attribute_total_bytes": 3362,
+        "pqc_attribute_overhead_bytes": 3366,
+        "pqc_signature_raw_bytes": 659,
         "pqc_public_key_raw_bytes": 897,
-        "pqc_certificate_der_bytes": 1741,
-        "ec_certificate_der_bytes": 449,
-        "ec_signature_der_bytes": 71
+        "pqc_certificate_der_bytes": 1744,
+        "ec_certificate_der_bytes": 448,
+        "ec_signature_der_bytes": 70
       },
       "intact": {
         "hybrid_policy": {
@@ -668,12 +668,12 @@
         "openssl_legacy": {
           "accepted": false,
           "returncode": 4,
-          "detail": "CMS Verification failure\n80BBC2C6697F0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80BBC2C6697F0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+          "detail": "CMS Verification failure\n804B23AA80730000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n804B23AA80730000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
         },
         "openssl_oqs": {
           "accepted": false,
           "returncode": 4,
-          "detail": "CMS Verification failure\n800B5CD5617F0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n800B5CD5617F0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+          "detail": "CMS Verification failure\n807B7D6D16700000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n807B7D6D16700000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
         }
       },
       "stripped": {
@@ -704,44 +704,44 @@
         "openssl_legacy": {
           "accepted": false,
           "returncode": 4,
-          "detail": "CMS Verification failure\n80BB3BFCA27A0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80BB3BFCA27A0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+          "detail": "CMS Verification failure\n802B81825D710000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n802B81825D710000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
         },
         "openssl_oqs": {
           "accepted": false,
           "returncode": 4,
-          "detail": "CMS Verification failure\n809B188C9E7F0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n809B188C9E7F0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+          "detail": "CMS Verification failure\n80CB50DBA1780000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80CB50DBA1780000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
         }
       },
       "latency": {
         "sign_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 820.543,
-          "mean_us": 832.4290000000001,
-          "stdev_us": 26.966586704661033,
-          "iqr_us": 9.014000000000124,
-          "p95_us": 869.5045999999999,
-          "p99_us": 877.7073200000002,
-          "min_us": 813.876,
-          "max_us": 879.758,
-          "total_wall_s": 0.004164833000231738,
+          "median_us": 881.3330000000001,
+          "mean_us": 898.8076050000001,
+          "stdev_us": 81.12541718924854,
+          "iqr_us": 69.45775000000003,
+          "p95_us": 1064.95975,
+          "p99_us": 1225.0004000000001,
+          "min_us": 799.23,
+          "max_us": 1435.233,
+          "total_wall_s": 0.17985614799999894,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         },
         "verify_hybrid_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 241.307,
-          "mean_us": 274.65819999999997,
-          "stdev_us": 76.66431548771567,
-          "iqr_us": 37.518,
-          "p95_us": 380.44339999999994,
-          "p99_us": 402.86868000000004,
-          "min_us": 224.393,
-          "max_us": 408.475,
-          "total_wall_s": 0.00137595100022736,
+          "median_us": 231.7295,
+          "mean_us": 242.881165,
+          "stdev_us": 34.50080070220459,
+          "iqr_us": 26.387249999999995,
+          "p95_us": 320.09685,
+          "p99_us": 383.75084000000004,
+          "min_us": 213.757,
+          "max_us": 425.971,
+          "total_wall_s": 0.048650835000444204,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         }
       }
     },
@@ -758,8 +758,8 @@
         "pqc_signature_raw_bytes": 7856,
         "pqc_public_key_raw_bytes": 32,
         "pqc_certificate_der_bytes": 8115,
-        "ec_certificate_der_bytes": 449,
-        "ec_signature_der_bytes": 71
+        "ec_certificate_der_bytes": 448,
+        "ec_signature_der_bytes": 72
       },
       "intact": {
         "hybrid_policy": {
@@ -835,34 +835,34 @@
       },
       "latency": {
         "sign_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 105140.656,
-          "mean_us": 106608.6708,
-          "stdev_us": 4376.718293151067,
-          "iqr_us": 516.7359999999899,
-          "p95_us": 112527.6824,
-          "p99_us": 113995.63248,
-          "min_us": 103680.95,
-          "max_us": 114362.62,
-          "total_wall_s": 0.5330478129999392,
+          "median_us": 108717.4825,
+          "mean_us": 109094.77273499999,
+          "stdev_us": 2286.4220212990535,
+          "iqr_us": 2092.3782499999943,
+          "p95_us": 112398.44270000001,
+          "p99_us": 116957.23375,
+          "min_us": 105855.885,
+          "max_us": 126870.002,
+          "total_wall_s": 21.819092237000405,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         },
         "verify_hybrid_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 337.33,
-          "mean_us": 342.3062,
-          "stdev_us": 9.929276897136065,
-          "iqr_us": 15.769000000000005,
-          "p95_us": 353.913,
-          "p99_us": 354.4218,
-          "min_us": 332.683,
-          "max_us": 354.549,
-          "total_wall_s": 0.00171433600007731,
+          "median_us": 371.0895,
+          "mean_us": 389.835225,
+          "stdev_us": 55.845668573187545,
+          "iqr_us": 37.94300000000004,
+          "p95_us": 510.5161,
+          "p99_us": 550.58242,
+          "min_us": 337.29,
+          "max_us": 827.966,
+          "total_wall_s": 0.07805765499961126,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         }
       }
     },
@@ -872,14 +872,14 @@
       "mechanism": "SPHINCS+-SHA2-128s-simple",
       "mode": "bound-attr",
       "sizes": {
-        "hybrid_cms_bytes": 16918,
-        "classical_only_cms_bytes": 849,
+        "hybrid_cms_bytes": 16917,
+        "classical_only_cms_bytes": 848,
         "pqc_attribute_total_bytes": 16065,
         "pqc_attribute_overhead_bytes": 16069,
         "pqc_signature_raw_bytes": 7856,
         "pqc_public_key_raw_bytes": 32,
         "pqc_certificate_der_bytes": 8115,
-        "ec_certificate_der_bytes": 449,
+        "ec_certificate_der_bytes": 448,
         "ec_signature_der_bytes": 71
       },
       "intact": {
@@ -956,34 +956,34 @@
       },
       "latency": {
         "sign_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 110540.511,
-          "mean_us": 109261.27679999999,
-          "stdev_us": 2761.5603302059485,
-          "iqr_us": 4479.8369999999995,
-          "p95_us": 111862.01399999998,
-          "p99_us": 112013.45640000001,
-          "min_us": 105984.789,
-          "max_us": 112051.317,
-          "total_wall_s": 0.5463109229999645,
+          "median_us": 109821.243,
+          "mean_us": 110351.0407,
+          "stdev_us": 2191.8411005928187,
+          "iqr_us": 2156.7054999999964,
+          "p95_us": 114371.85854999999,
+          "p99_us": 117135.33351,
+          "min_us": 107145.112,
+          "max_us": 118986.229,
+          "total_wall_s": 22.070340147000024,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         },
         "verify_hybrid_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 392.31,
-          "mean_us": 387.5044,
-          "stdev_us": 25.148009251231013,
-          "iqr_us": 41.20300000000003,
-          "p95_us": 413.2214,
-          "p99_us": 414.42108,
-          "min_us": 357.248,
-          "max_us": 414.721,
-          "total_wall_s": 0.0019405929997446947,
+          "median_us": 381.35,
+          "mean_us": 408.65357000000006,
+          "stdev_us": 85.20208990084963,
+          "iqr_us": 45.83850000000001,
+          "p95_us": 548.9233,
+          "p99_us": 737.1287299999999,
+          "min_us": 341.724,
+          "max_us": 1000.018,
+          "total_wall_s": 0.08181518999936088,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         }
       }
     },
@@ -993,14 +993,14 @@
       "mechanism": "SPHINCS+-SHA2-128s-simple",
       "mode": "bound-digest",
       "sizes": {
-        "hybrid_cms_bytes": 16920,
-        "classical_only_cms_bytes": 849,
+        "hybrid_cms_bytes": 16919,
+        "classical_only_cms_bytes": 848,
         "pqc_attribute_total_bytes": 16067,
         "pqc_attribute_overhead_bytes": 16071,
         "pqc_signature_raw_bytes": 7856,
         "pqc_public_key_raw_bytes": 32,
         "pqc_certificate_der_bytes": 8115,
-        "ec_certificate_der_bytes": 449,
+        "ec_certificate_der_bytes": 448,
         "ec_signature_der_bytes": 71
       },
       "intact": {
@@ -1031,12 +1031,12 @@
         "openssl_legacy": {
           "accepted": false,
           "returncode": 4,
-          "detail": "CMS Verification failure\n803B8315AC750000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n803B8315AC750000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+          "detail": "CMS Verification failure\n804B9D351F7A0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n804B9D351F7A0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
         },
         "openssl_oqs": {
           "accepted": false,
           "returncode": 4,
-          "detail": "CMS Verification failure\n809B32354A7B0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n809B32354A7B0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+          "detail": "CMS Verification failure\n803BDF03807D0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n803BDF03807D0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
         }
       },
       "stripped": {
@@ -1067,44 +1067,44 @@
         "openssl_legacy": {
           "accepted": false,
           "returncode": 4,
-          "detail": "CMS Verification failure\n801B871EE07C0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n801B871EE07C0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+          "detail": "CMS Verification failure\n809BE389FE7B0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n809BE389FE7B0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
         },
         "openssl_oqs": {
           "accepted": false,
           "returncode": 4,
-          "detail": "CMS Verification failure\n80FBDFB8D37A0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80FBDFB8D37A0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+          "detail": "CMS Verification failure\n806B7CCF9D760000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n806B7CCF9D760000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
         }
       },
       "latency": {
         "sign_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 110884.43,
-          "mean_us": 111182.5358,
-          "stdev_us": 3193.5026993206393,
-          "iqr_us": 1442.3889999999956,
-          "p95_us": 115104.1742,
-          "p99_us": 115780.31484,
-          "min_us": 107074.346,
-          "max_us": 115949.35,
-          "total_wall_s": 0.5559163679999983,
+          "median_us": 109685.224,
+          "mean_us": 110414.79371,
+          "stdev_us": 3062.530060658791,
+          "iqr_us": 2603.879000000001,
+          "p95_us": 115918.68135,
+          "p99_us": 123963.24107999999,
+          "min_us": 106947.386,
+          "max_us": 127249.271,
+          "total_wall_s": 22.083137308000005,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         },
         "verify_hybrid_us": {
-          "n": 5,
+          "n": 200,
           "warmup": 20,
-          "median_us": 343.775,
-          "mean_us": 347.2958,
-          "stdev_us": 9.752370645130355,
-          "iqr_us": 16.939999999999998,
-          "p95_us": 358.233,
-          "p99_us": 358.5322,
-          "min_us": 337.563,
-          "max_us": 358.607,
-          "total_wall_s": 0.0017391599999427854,
+          "median_us": 387.9385,
+          "mean_us": 401.54957499999995,
+          "stdev_us": 54.821272013061,
+          "iqr_us": 39.459,
+          "p95_us": 521.9132,
+          "p99_us": 607.2507,
+          "min_us": 340.821,
+          "max_us": 729.655,
+          "total_wall_s": 0.08039805899989005,
           "truncated": false,
-          "target_n": 5
+          "target_n": 200
         }
       }
     }

@@ -135,8 +135,11 @@ def fig_hybrid_composition(sep: dict, out: Path):
     ax.set_title("Size composition of the hybrid artifact")
     ax.xaxis.grid(True); ax.set_axisbelow(True)
     ax.xaxis.set_major_formatter(FuncFormatter(_bytes_fmt))
-    ax.legend(loc="lower right", fontsize=8, ncol=2)
-    ax.margins(x=0.18)
+    # Legend below the axes: in-axes placement collides with the SPHINCS+ bar,
+    # which is wide enough to reach any interior corner.
+    ax.legend(fontsize=8, ncol=4, loc="upper center",
+              bbox_to_anchor=(0.5, -0.28))
+    ax.margins(x=0.20)
     return _save(fig, out, "fig2_hybrid_composition.png")
 
 
@@ -171,7 +174,9 @@ def fig_latency(prim: dict, out: Path):
                  "n = %s)" % (ns[0] if len(ns) == 1 else "%d-%d"
                               % (ns[0], ns[-1])))
     ax.yaxis.grid(True); ax.set_axisbelow(True)
-    ax.legend(fontsize=8, ncol=2)
+    # SPHINCS+ signing reaches ~1e5 us, so an in-axes legend overlaps it.
+    ax.legend(fontsize=8, ncol=4, loc="upper center",
+              bbox_to_anchor=(0.5, -0.10))
     return _save(fig, out, "fig3_latency.png")
 
 
