@@ -4,8 +4,8 @@
 # they must not drift between the authors' run and a reviewer's.
 FROM ubuntu:24.04
 
-ARG LIBOQS_TAG=0.12.0
-ARG OQSPROVIDER_TAG=0.8.0
+ARG LIBOQS_TAG=0.16.0
+ARG OQSPROVIDER_TAG=0.9.0
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
