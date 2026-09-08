@@ -1,5 +1,15 @@
 # Pinned for reproducibility; the manuscript reports these versions.
-liboqs-python==0.16.0
+#
+# The whole OQS stack is pinned to the 0.12.0 / 0.8.0 generation on purpose.
+# liboqs 0.16.0 renamed the SPHINCS+ symbols to SLH-DSA
+# (OQS_SIG_alg_sphincs_sha2_128s_simple no longer exists), and no released
+# oqs-provider builds against it -- 0.9.0 fails to compile with dozens of
+# "undeclared" errors on those symbols. Do not bump one of these three without
+# the other two.
+#
+# liboqs-python comes from git rather than PyPI: PyPI carries only 0.16.0,
+# which pairs with the liboqs release that breaks oqs-provider.
+liboqs-python @ git+https://github.com/open-quantum-safe/liboqs-python.git@0.12.0
 cryptography==44.0.0
 asn1crypto==1.5.1
 matplotlib==3.9.2

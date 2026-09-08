@@ -42,11 +42,20 @@ def _openssl_verify(art_der: bytes, message: bytes, ec_cert_der: bytes,
                     env: dict) -> dict:
     """Run `openssl cms -verify` on a detached signature.
 
-    -noverify disables *certificate chain* validation, which is required here
-    because the signer certificate is self-signed. It does not disable
-    signature checking. The original scripts omitted both -noverify and
-    -CAfile, which is why every classical row in the old metrics.csv reported
-    pass=0.
+    Two flags are load-bearing and both were absent from the original scripts:
+
+    -noverify disables *certificate chain* validation, required here because
+    the signer certificate is self-signed. It does not disable signature
+    checking. Omitting it is why every classical row in the old metrics.csv
+    reported pass=0.
+
+    -binary disables S/MIME canonicalisation of the detached content. Without
+    it, `openssl cms` rewrites LF to CRLF before hashing, so its content digest
+    never matches the messageDigest attribute for any document containing a
+    newline, and every artifact is rejected with a
+    CMS_SignerInfo_verify_content error regardless of whether the signature is
+    sound. That failure mode is indistinguishable from a genuine legacy
+    rejection, which would silently invert the RQ1 result.
     """
     with tempfile.TemporaryDirectory() as td:
         d = Path(td)
@@ -61,6 +70,7 @@ def _openssl_verify(art_der: bytes, message: bytes, ec_cert_der: bytes,
             "-content", str(d / "msg.bin"),
             "-certfile", str(d / "signer.pem"),
             "-noverify",
+            "-binary",
             "-out", os.devnull,
         ]
         try:

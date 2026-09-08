@@ -187,6 +187,9 @@ def sign(keys: HybridKeys, message: bytes, mode: str,
         ]),
     })
 
+    # asn1crypto types SignedData.encap_content_info as ContentInfo (not
+    # EncapsulatedContentInfo), so hand it a dict and let it build the right
+    # class rather than naming one.
     encap = {"content_type": "data"}
     if not detached:
         encap["content"] = core.ParsableOctetString(message)
@@ -194,7 +197,7 @@ def sign(keys: HybridKeys, message: bytes, mode: str,
     signed_data = cms.SignedData({
         "version": "v1",
         "digest_algorithms": [algos.DigestAlgorithm({"algorithm": "sha256"})],
-        "encap_content_info": cms.EncapsulatedContentInfo(encap),
+        "encap_content_info": encap,
         "certificates": [cms.CertificateChoices({"certificate": ec_cert})],
         "signer_infos": [signer_info],
     })

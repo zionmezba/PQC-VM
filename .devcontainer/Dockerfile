@@ -4,9 +4,17 @@
 # they must not drift between the authors' run and a reviewer's.
 FROM ubuntu:24.04
 
-ARG LIBOQS_TAG=0.16.0
-ARG OQSPROVIDER_TAG=0.9.0
+ARG LIBOQS_TAG=0.12.0
+ARG OQSPROVIDER_TAG=0.8.0
 ARG DEBIAN_FRONTEND=noninteractive
+
+# Connections to archive.ubuntu.com / security.ubuntu.com time out
+# intermittently from Docker Desktop, and the default single attempt turns each
+# timeout into a failed index fetch. Retries make `apt-get update` survive them;
+# ForceIPv4 removes one more variable. Observed: ~330s with retries, versus an
+# `apt-get update` that otherwise stalls indefinitely.
+RUN echo 'Acquire::ForceIPv4 "true";' > /etc/apt/apt.conf.d/99force-ipv4 \
+ && echo 'Acquire::Retries "3";' >> /etc/apt/apt.conf.d/99force-ipv4
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential git cmake ninja-build pkg-config \

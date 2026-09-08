@@ -1,0 +1,98 @@
+{
+  "environment": {
+    "timestamp_utc": "2026-09-08T07:18:32.730944+00:00",
+    "cpu_model": "12th Gen Intel(R) Core(TM) i7-12700",
+    "cpu_count_logical": 20,
+    "cpu_scaling": {
+      "governor": "unavailable",
+      "max_freq_khz": "unavailable"
+    },
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "python": "3.12.3",
+    "liboqs": "0.12.0",
+    "liboqs_python": "0.12.0",
+    "openssl_cli": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+    "openssl_conf": "<unset: legacy profile>",
+    "oqs_provider_loaded": false,
+    "cryptography": "44.0.0",
+    "asn1crypto": "1.5.1"
+  },
+  "rows": [
+    {
+      "n": 50,
+      "median_us": 545.0065,
+      "mean_us": 558.6709999999999,
+      "stdev_us": 61.69872715089685,
+      "iqr_us": 65.30975000000001,
+      "p95_us": 676.2122,
+      "min_us": 463.79,
+      "max_us": 777.366,
+      "case": "shell_roundtrip",
+      "command": "sh -c true"
+    },
+    {
+      "n": 50,
+      "median_us": 6755.7615,
+      "mean_us": 6798.76302,
+      "stdev_us": 364.3272218141207,
+      "iqr_us": 429.7285000000011,
+      "p95_us": 7456.0332499999995,
+      "min_us": 6330.063,
+      "max_us": 7968.82,
+      "case": "python3_startup",
+      "command": "python3 -c pass"
+    },
+    {
+      "n": 50,
+      "median_us": 1368.8854999999999,
+      "mean_us": 1388.03518,
+      "stdev_us": 87.7618870689647,
+      "iqr_us": 72.0474999999999,
+      "p95_us": 1491.43855,
+      "min_us": 1262.715,
+      "max_us": 1797.128,
+      "case": "openssl_legacy",
+      "command": "openssl version"
+    },
+    {
+      "n": 50,
+      "median_us": 3362.2619999999997,
+      "mean_us": 4454.2362,
+      "stdev_us": 2516.345484744907,
+      "iqr_us": 3352.2442499999997,
+      "p95_us": 9309.0752,
+      "min_us": 2203.366,
+      "max_us": 13482.36,
+      "case": "openssl_oqs",
+      "command": "openssl version"
+    }
+  ],
+  "provider_load_cost_us": 1993.3764999999999,
+  "inflation_vs_in_process_verify": [
+    {
+      "algorithm": "ECDSA-P256",
+      "in_process_verify_median_us": 47.567,
+      "single_openssl_invocation_median_us": 1368.8854999999999,
+      "inflation_factor": 28.77804990855004
+    },
+    {
+      "algorithm": "ML-DSA-65",
+      "in_process_verify_median_us": 28.033,
+      "single_openssl_invocation_median_us": 1368.8854999999999,
+      "inflation_factor": 48.8312167802233
+    },
+    {
+      "algorithm": "Falcon-512",
+      "in_process_verify_median_us": 24.856,
+      "single_openssl_invocation_median_us": 1368.8854999999999,
+      "inflation_factor": 55.07263839716768
+    },
+    {
+      "algorithm": "SPHINCS+-SHA2-128s-simple",
+      "in_process_verify_median_us": 155.015,
+      "single_openssl_invocation_median_us": 1368.8854999999999,
+      "inflation_factor": 8.830664774376674
+    }
+  ]
+}

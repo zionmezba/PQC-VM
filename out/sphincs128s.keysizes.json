@@ -1,0 +1,8 @@
+{
+  "mechanism": "SPHINCS+-SHA2-128s-simple",
+  "ec_public_key_raw_bytes": 65,
+  "ec_certificate_der_bytes": 449,
+  "pqc_public_key_raw_bytes": 32,
+  "pqc_secret_key_raw_bytes": 64,
+  "pqc_certificate_der_bytes": 8115
+}

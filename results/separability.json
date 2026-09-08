@@ -1,0 +1,1113 @@
+{
+  "environment": {
+    "timestamp_utc": "2026-09-08T07:19:45.214752+00:00",
+    "cpu_model": "12th Gen Intel(R) Core(TM) i7-12700",
+    "cpu_count_logical": 20,
+    "cpu_scaling": {
+      "governor": "unavailable",
+      "max_freq_khz": "unavailable"
+    },
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "python": "3.12.3",
+    "liboqs": "0.12.0",
+    "liboqs_python": "0.12.0",
+    "openssl_cli": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+    "openssl_conf": "<unset: legacy profile>",
+    "oqs_provider_loaded": false,
+    "cryptography": "44.0.0",
+    "asn1crypto": "1.5.1"
+  },
+  "cases": [
+    {
+      "algorithm": "ML-DSA-65",
+      "algorithm_key": "mldsa65",
+      "mechanism": "ML-DSA-65",
+      "mode": "concat",
+      "sizes": {
+        "hybrid_cms_bytes": 11584,
+        "classical_only_cms_bytes": 798,
+        "pqc_attribute_total_bytes": 10782,
+        "pqc_attribute_overhead_bytes": 10786,
+        "pqc_signature_raw_bytes": 3309,
+        "pqc_public_key_raw_bytes": 1952,
+        "pqc_certificate_der_bytes": 5461,
+        "ec_certificate_der_bytes": 448,
+        "ec_signature_der_bytes": 71
+      },
+      "intact": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "stripped": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "PQC signature attribute absent"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "latency": {
+        "sign_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 724.461,
+          "mean_us": 735.8462,
+          "stdev_us": 32.38924351077069,
+          "iqr_us": 1.8600000000000136,
+          "p95_us": 779.5288,
+          "p99_us": 790.35536,
+          "min_us": 712.776,
+          "max_us": 793.062,
+          "total_wall_s": 0.003683747999730258,
+          "truncated": false,
+          "target_n": 5
+        },
+        "verify_hybrid_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 224.327,
+          "mean_us": 224.8236,
+          "stdev_us": 3.765271875973894,
+          "iqr_us": 3.1129999999999995,
+          "p95_us": 229.0182,
+          "p99_us": 229.43084,
+          "min_us": 219.46,
+          "max_us": 229.534,
+          "total_wall_s": 0.001127376000113145,
+          "truncated": false,
+          "target_n": 5
+        }
+      }
+    },
+    {
+      "algorithm": "ML-DSA-65",
+      "algorithm_key": "mldsa65",
+      "mechanism": "ML-DSA-65",
+      "mode": "bound-attr",
+      "sizes": {
+        "hybrid_cms_bytes": 11637,
+        "classical_only_cms_bytes": 847,
+        "pqc_attribute_total_bytes": 10786,
+        "pqc_attribute_overhead_bytes": 10790,
+        "pqc_signature_raw_bytes": 3309,
+        "pqc_public_key_raw_bytes": 1952,
+        "pqc_certificate_der_bytes": 5461,
+        "ec_certificate_der_bytes": 448,
+        "ec_signature_der_bytes": 70
+      },
+      "intact": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": true,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "stripped": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "PQC signature attribute absent but binding attribute present: stripped artifact"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "latency": {
+        "sign_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 786.836,
+          "mean_us": 799.5758,
+          "stdev_us": 28.821454607635623,
+          "iqr_us": 16.766999999999825,
+          "p95_us": 838.689,
+          "p99_us": 845.745,
+          "min_us": 773.483,
+          "max_us": 847.509,
+          "total_wall_s": 0.004000849000021844,
+          "truncated": false,
+          "target_n": 5
+        },
+        "verify_hybrid_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 272.657,
+          "mean_us": 272.1478,
+          "stdev_us": 19.68439156286015,
+          "iqr_us": 24.060000000000002,
+          "p95_us": 295.0354,
+          "p99_us": 297.41748,
+          "min_us": 247.879,
+          "max_us": 298.013,
+          "total_wall_s": 0.0013634019996970892,
+          "truncated": false,
+          "target_n": 5
+        }
+      }
+    },
+    {
+      "algorithm": "ML-DSA-65",
+      "algorithm_key": "mldsa65",
+      "mechanism": "ML-DSA-65",
+      "mode": "bound-digest",
+      "sizes": {
+        "hybrid_cms_bytes": 11641,
+        "classical_only_cms_bytes": 849,
+        "pqc_attribute_total_bytes": 10788,
+        "pqc_attribute_overhead_bytes": 10792,
+        "pqc_signature_raw_bytes": 3309,
+        "pqc_public_key_raw_bytes": 1952,
+        "pqc_certificate_der_bytes": 5461,
+        "ec_certificate_der_bytes": 448,
+        "ec_signature_der_bytes": 72
+      },
+      "intact": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": true,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n802BF2F8F0770000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n802BF2F8F0770000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n801B132A33770000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n801B132A33770000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      },
+      "stripped": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "PQC signature attribute absent but binding attribute present: stripped artifact"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n80BB6DF9DE770000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80BB6DF9DE770000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n80BB6DD8F6730000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80BB6DD8F6730000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      },
+      "latency": {
+        "sign_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 767.613,
+          "mean_us": 761.8464,
+          "stdev_us": 31.892606679291685,
+          "iqr_us": 42.980999999999995,
+          "p95_us": 799.0268,
+          "p99_us": 803.6253599999999,
+          "min_us": 727.757,
+          "max_us": 804.775,
+          "total_wall_s": 0.003811921999840706,
+          "truncated": false,
+          "target_n": 5
+        },
+        "verify_hybrid_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 229.211,
+          "mean_us": 230.1214,
+          "stdev_us": 5.185305805832476,
+          "iqr_us": 7.581999999999965,
+          "p95_us": 236.23620000000003,
+          "p99_us": 236.70484,
+          "min_us": 224.37,
+          "max_us": 236.822,
+          "total_wall_s": 0.0011532339999575925,
+          "truncated": false,
+          "target_n": 5
+        }
+      }
+    },
+    {
+      "algorithm": "Falcon-512",
+      "algorithm_key": "falcon512",
+      "mechanism": "Falcon-512",
+      "mode": "concat",
+      "sizes": {
+        "hybrid_cms_bytes": 4151,
+        "classical_only_cms_bytes": 798,
+        "pqc_attribute_total_bytes": 3349,
+        "pqc_attribute_overhead_bytes": 3353,
+        "pqc_signature_raw_bytes": 655,
+        "pqc_public_key_raw_bytes": 897,
+        "pqc_certificate_der_bytes": 1741,
+        "ec_certificate_der_bytes": 449,
+        "ec_signature_der_bytes": 70
+      },
+      "intact": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "stripped": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "PQC signature attribute absent"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "latency": {
+        "sign_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 797.385,
+          "mean_us": 802.2139999999999,
+          "stdev_us": 18.575705208685893,
+          "iqr_us": 25.099000000000046,
+          "p95_us": 825.3024,
+          "p99_us": 827.61488,
+          "min_us": 783.111,
+          "max_us": 828.193,
+          "total_wall_s": 0.004013957999632112,
+          "truncated": false,
+          "target_n": 5
+        },
+        "verify_hybrid_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 213.074,
+          "mean_us": 219.17980000000003,
+          "stdev_us": 12.783853691277914,
+          "iqr_us": 11.939999999999998,
+          "p95_us": 236.61,
+          "p99_us": 239.422,
+          "min_us": 209.54,
+          "max_us": 240.125,
+          "total_wall_s": 0.0010983540000779612,
+          "truncated": false,
+          "target_n": 5
+        }
+      }
+    },
+    {
+      "algorithm": "Falcon-512",
+      "algorithm_key": "falcon512",
+      "mechanism": "Falcon-512",
+      "mode": "bound-attr",
+      "sizes": {
+        "hybrid_cms_bytes": 4206,
+        "classical_only_cms_bytes": 850,
+        "pqc_attribute_total_bytes": 3352,
+        "pqc_attribute_overhead_bytes": 3356,
+        "pqc_signature_raw_bytes": 654,
+        "pqc_public_key_raw_bytes": 897,
+        "pqc_certificate_der_bytes": 1741,
+        "ec_certificate_der_bytes": 449,
+        "ec_signature_der_bytes": 72
+      },
+      "intact": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": true,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "stripped": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "PQC signature attribute absent but binding attribute present: stripped artifact"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "latency": {
+        "sign_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 900.647,
+          "mean_us": 946.9028000000001,
+          "stdev_us": 119.5005086964068,
+          "iqr_us": 147.92899999999997,
+          "p95_us": 1103.0312,
+          "p99_us": 1122.29104,
+          "min_us": 841.226,
+          "max_us": 1127.106,
+          "total_wall_s": 0.004737703000046167,
+          "truncated": false,
+          "target_n": 5
+        },
+        "verify_hybrid_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 236.684,
+          "mean_us": 239.5366,
+          "stdev_us": 13.086666890388862,
+          "iqr_us": 9.692999999999984,
+          "p95_us": 257.133,
+          "p99_us": 260.42260000000005,
+          "min_us": 228.077,
+          "max_us": 261.245,
+          "total_wall_s": 0.001200230999984342,
+          "truncated": false,
+          "target_n": 5
+        }
+      }
+    },
+    {
+      "algorithm": "Falcon-512",
+      "algorithm_key": "falcon512",
+      "mechanism": "Falcon-512",
+      "mode": "bound-digest",
+      "sizes": {
+        "hybrid_cms_bytes": 4204,
+        "classical_only_cms_bytes": 849,
+        "pqc_attribute_total_bytes": 3351,
+        "pqc_attribute_overhead_bytes": 3355,
+        "pqc_signature_raw_bytes": 651,
+        "pqc_public_key_raw_bytes": 897,
+        "pqc_certificate_der_bytes": 1741,
+        "ec_certificate_der_bytes": 449,
+        "ec_signature_der_bytes": 71
+      },
+      "intact": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": true,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n80BBC2C6697F0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80BBC2C6697F0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n800B5CD5617F0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n800B5CD5617F0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      },
+      "stripped": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "PQC signature attribute absent but binding attribute present: stripped artifact"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n80BB3BFCA27A0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80BB3BFCA27A0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n809B188C9E7F0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n809B188C9E7F0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      },
+      "latency": {
+        "sign_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 820.543,
+          "mean_us": 832.4290000000001,
+          "stdev_us": 26.966586704661033,
+          "iqr_us": 9.014000000000124,
+          "p95_us": 869.5045999999999,
+          "p99_us": 877.7073200000002,
+          "min_us": 813.876,
+          "max_us": 879.758,
+          "total_wall_s": 0.004164833000231738,
+          "truncated": false,
+          "target_n": 5
+        },
+        "verify_hybrid_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 241.307,
+          "mean_us": 274.65819999999997,
+          "stdev_us": 76.66431548771567,
+          "iqr_us": 37.518,
+          "p95_us": 380.44339999999994,
+          "p99_us": 402.86868000000004,
+          "min_us": 224.393,
+          "max_us": 408.475,
+          "total_wall_s": 0.00137595100022736,
+          "truncated": false,
+          "target_n": 5
+        }
+      }
+    },
+    {
+      "algorithm": "SPHINCS+-SHA2-128s-simple",
+      "algorithm_key": "sphincs128s",
+      "mechanism": "SPHINCS+-SHA2-128s-simple",
+      "mode": "concat",
+      "sizes": {
+        "hybrid_cms_bytes": 16864,
+        "classical_only_cms_bytes": 799,
+        "pqc_attribute_total_bytes": 16061,
+        "pqc_attribute_overhead_bytes": 16065,
+        "pqc_signature_raw_bytes": 7856,
+        "pqc_public_key_raw_bytes": 32,
+        "pqc_certificate_der_bytes": 8115,
+        "ec_certificate_der_bytes": 449,
+        "ec_signature_der_bytes": 71
+      },
+      "intact": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "stripped": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "PQC signature attribute absent"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "latency": {
+        "sign_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 105140.656,
+          "mean_us": 106608.6708,
+          "stdev_us": 4376.718293151067,
+          "iqr_us": 516.7359999999899,
+          "p95_us": 112527.6824,
+          "p99_us": 113995.63248,
+          "min_us": 103680.95,
+          "max_us": 114362.62,
+          "total_wall_s": 0.5330478129999392,
+          "truncated": false,
+          "target_n": 5
+        },
+        "verify_hybrid_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 337.33,
+          "mean_us": 342.3062,
+          "stdev_us": 9.929276897136065,
+          "iqr_us": 15.769000000000005,
+          "p95_us": 353.913,
+          "p99_us": 354.4218,
+          "min_us": 332.683,
+          "max_us": 354.549,
+          "total_wall_s": 0.00171433600007731,
+          "truncated": false,
+          "target_n": 5
+        }
+      }
+    },
+    {
+      "algorithm": "SPHINCS+-SHA2-128s-simple",
+      "algorithm_key": "sphincs128s",
+      "mechanism": "SPHINCS+-SHA2-128s-simple",
+      "mode": "bound-attr",
+      "sizes": {
+        "hybrid_cms_bytes": 16918,
+        "classical_only_cms_bytes": 849,
+        "pqc_attribute_total_bytes": 16065,
+        "pqc_attribute_overhead_bytes": 16069,
+        "pqc_signature_raw_bytes": 7856,
+        "pqc_public_key_raw_bytes": 32,
+        "pqc_certificate_der_bytes": 8115,
+        "ec_certificate_der_bytes": 449,
+        "ec_signature_der_bytes": 71
+      },
+      "intact": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": true,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "stripped": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "PQC signature attribute absent but binding attribute present: stripped artifact"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "latency": {
+        "sign_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 110540.511,
+          "mean_us": 109261.27679999999,
+          "stdev_us": 2761.5603302059485,
+          "iqr_us": 4479.8369999999995,
+          "p95_us": 111862.01399999998,
+          "p99_us": 112013.45640000001,
+          "min_us": 105984.789,
+          "max_us": 112051.317,
+          "total_wall_s": 0.5463109229999645,
+          "truncated": false,
+          "target_n": 5
+        },
+        "verify_hybrid_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 392.31,
+          "mean_us": 387.5044,
+          "stdev_us": 25.148009251231013,
+          "iqr_us": 41.20300000000003,
+          "p95_us": 413.2214,
+          "p99_us": 414.42108,
+          "min_us": 357.248,
+          "max_us": 414.721,
+          "total_wall_s": 0.0019405929997446947,
+          "truncated": false,
+          "target_n": 5
+        }
+      }
+    },
+    {
+      "algorithm": "SPHINCS+-SHA2-128s-simple",
+      "algorithm_key": "sphincs128s",
+      "mechanism": "SPHINCS+-SHA2-128s-simple",
+      "mode": "bound-digest",
+      "sizes": {
+        "hybrid_cms_bytes": 16920,
+        "classical_only_cms_bytes": 849,
+        "pqc_attribute_total_bytes": 16067,
+        "pqc_attribute_overhead_bytes": 16071,
+        "pqc_signature_raw_bytes": 7856,
+        "pqc_public_key_raw_bytes": 32,
+        "pqc_certificate_der_bytes": 8115,
+        "ec_certificate_der_bytes": 449,
+        "ec_signature_der_bytes": 71
+      },
+      "intact": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": true,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n803B8315AC750000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n803B8315AC750000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n809B32354A7B0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n809B32354A7B0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      },
+      "stripped": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "PQC signature attribute absent but binding attribute present: stripped artifact"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": false,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n801B871EE07C0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n801B871EE07C0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n80FBDFB8D37A0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80FBDFB8D37A0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      },
+      "latency": {
+        "sign_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 110884.43,
+          "mean_us": 111182.5358,
+          "stdev_us": 3193.5026993206393,
+          "iqr_us": 1442.3889999999956,
+          "p95_us": 115104.1742,
+          "p99_us": 115780.31484,
+          "min_us": 107074.346,
+          "max_us": 115949.35,
+          "total_wall_s": 0.5559163679999983,
+          "truncated": false,
+          "target_n": 5
+        },
+        "verify_hybrid_us": {
+          "n": 5,
+          "warmup": 20,
+          "median_us": 343.775,
+          "mean_us": 347.2958,
+          "stdev_us": 9.752370645130355,
+          "iqr_us": 16.939999999999998,
+          "p95_us": 358.233,
+          "p99_us": 358.5322,
+          "min_us": 337.563,
+          "max_us": 358.607,
+          "total_wall_s": 0.0017391599999427854,
+          "truncated": false,
+          "target_n": 5
+        }
+      }
+    }
+  ],
+  "message_bytes": 39
+}

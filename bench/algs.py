@@ -43,10 +43,16 @@ PQC_ALGS: tuple[PqcAlg, ...] = (
     PqcAlg(
         key="sphincs128s",
         label="SPHINCS+-SHA2-128s-simple",
+        # liboqs 0.16.0 renamed these to SLH-DSA. This build is pinned to
+        # 0.12.0 (see requirements.txt for why), so the SPHINCS+ spellings are
+        # what resolve today; the SLH-DSA names are listed after them so a
+        # future bump resolves rather than erroring.
         candidates=(
             "SPHINCS+-SHA2-128s-simple",
             "SPHINCS+-SHA2-128s-robust",
             "SPHINCS+-SHA2-128s",
+            "SLH-DSA-SHA2-128s",
+            "SLH-DSA-SHA2-128s-simple",
         ),
         oid="2.16.840.1.101.3.4.3.20",  # id-slh-dsa-sha2-128s
         oid_registered=True,
