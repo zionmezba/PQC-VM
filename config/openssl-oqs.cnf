@@ -16,6 +16,11 @@ oqsprovider = oqsprovider_sect
 activate = 1
 
 [oqsprovider_sect]
-# Resolved against OPENSSL_MODULES (=/opt/oqs-modules in the container).
-module = oqsprovider
+# MUST be an absolute path. A bare module name ("oqsprovider") is NOT resolved
+# against OPENSSL_MODULES by OpenSSL 3.0.13 -- the provider is silently not
+# loaded, `openssl list -providers` shows only the default provider, and the
+# exit code is still 0. There is no error to notice, so any experiment that
+# thinks it is exercising the PQC-aware profile would in fact be running the
+# legacy one and reporting it under the wrong name.
+module = /opt/oqs-modules/oqsprovider.so
 activate = 1

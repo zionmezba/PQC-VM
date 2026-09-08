@@ -55,6 +55,8 @@ def main(argv=None) -> int:
     ap.add_argument("--quick", action="store_true",
                     help="smoke run with tiny n; not a result")
     ap.add_argument("--out", default="results")
+    ap.add_argument("--message", default="data/msg.txt",
+                    help="document signed by the hybrid experiments")
     ap.add_argument("--skip-figures", action="store_true")
     args = ap.parse_args(argv)
 
@@ -65,30 +67,39 @@ def main(argv=None) -> int:
     n_attack = 5 if args.quick else 200
     budget = 10.0 if args.quick else 60.0
 
-    msg = Path("data/msg.txt")
+    msg = Path(args.message)
     if not msg.exists() or msg.stat().st_size == 0:
-        print("\nERROR: data/msg.txt is missing or empty. "
-              "Run `scripts/gen_payloads.sh` first.")
+        print("\nERROR: %s is missing or empty. "
+              "Run `scripts/gen_payloads.sh` first." % msg)
         return 1
 
-    from . import attack, bench_primitives, cli_overhead
+    from . import attack, bench_primitives, cli_overhead, substitute
 
-    print("\n[1/4] in-process primitive latency (n=%d per cell)" % n_prim)
+    print("\n[1/5] in-process primitive latency (n=%d per cell)" % n_prim)
     bench_primitives.main(["-n", str(n_prim), "--budget", str(budget),
                            "--out", args.out])
 
-    print("\n[2/4] CLI / process-launch overhead")
+    print("\n[2/5] CLI / process-launch overhead")
     cli_overhead.main(["-n", "50" if args.quick else "200",
                        "--out", args.out])
 
-    print("\n[3/4] hybrid CMS, legacy compatibility, stripping attack")
+    print("\n[3/5] hybrid CMS, legacy compatibility, stripping attack")
     attack.main(["-n", str(n_attack), "--budget", str(budget),
-                 "--out", args.out])
+                 "--message", args.message, "--out", args.out])
+
+    print("\n[4/5] substitution attacks and mode downgrade")
+    # A non-zero return here means the content_tamper control was accepted by
+    # some verifier. That invalidates every other row in the matrix, so the run
+    # stops rather than writing figures over an untrustworthy result.
+    rc = substitute.main(["--message", args.message, "--out", args.out])
+    if rc != 0:
+        print("\nABORTING: substitution control failed; see above.")
+        return rc
 
     if args.skip_figures:
-        print("\n[4/4] figures skipped")
+        print("\n[5/5] figures skipped")
         return 0
-    print("\n[4/4] figures")
+    print("\n[5/5] figures")
     from . import figures
     figures.main(["--results", args.out,
                   "--out", str(Path(args.out) / "figures")])

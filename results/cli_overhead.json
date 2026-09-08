@@ -1,6 +1,6 @@
 {
   "environment": {
-    "timestamp_utc": "2026-09-08T07:27:20.910967+00:00",
+    "timestamp_utc": "2026-09-08T12:54:44.819969+00:00",
     "cpu_model": "12th Gen Intel(R) Core(TM) i7-12700",
     "cpu_count_logical": 20,
     "cpu_scaling": {
@@ -21,78 +21,78 @@
   "rows": [
     {
       "n": 200,
-      "median_us": 517.1914999999999,
-      "mean_us": 562.539105,
-      "stdev_us": 214.12801146457423,
-      "iqr_us": 71.75699999999995,
-      "p95_us": 773.6614,
-      "min_us": 428.024,
-      "max_us": 2958.118,
+      "median_us": 570.0395,
+      "mean_us": 591.110625,
+      "stdev_us": 97.09973830008038,
+      "iqr_us": 97.14875000000018,
+      "p95_us": 792.2489499999999,
+      "min_us": 454.747,
+      "max_us": 1061.878,
       "case": "shell_roundtrip",
       "command": "sh -c true"
     },
     {
       "n": 200,
-      "median_us": 6746.4465,
-      "mean_us": 6815.782715,
-      "stdev_us": 309.9030970378029,
-      "iqr_us": 353.97399999999834,
-      "p95_us": 7390.670549999999,
-      "min_us": 6366.191,
-      "max_us": 8254.812,
+      "median_us": 7295.7325,
+      "mean_us": 7417.90779,
+      "stdev_us": 598.7579668606014,
+      "iqr_us": 550.9999999999991,
+      "p95_us": 8374.983049999999,
+      "min_us": 6545.027,
+      "max_us": 11321.067,
       "case": "python3_startup",
       "command": "python3 -c pass"
     },
     {
       "n": 200,
-      "median_us": 1379.6689999999999,
-      "mean_us": 1413.80101,
-      "stdev_us": 164.50474024765865,
-      "iqr_us": 121.952,
-      "p95_us": 1663.8849000000002,
-      "min_us": 1201.497,
-      "max_us": 2719.406,
+      "median_us": 1475.5529999999999,
+      "mean_us": 1521.1617449999999,
+      "stdev_us": 215.18928566124512,
+      "iqr_us": 140.6932499999998,
+      "p95_us": 1816.0185000000001,
+      "min_us": 1294.764,
+      "max_us": 2825.718,
       "case": "openssl_legacy",
       "command": "openssl version"
     },
     {
       "n": 200,
-      "median_us": 2800.1925,
-      "mean_us": 4315.655125,
-      "stdev_us": 3163.998736671501,
-      "iqr_us": 1405.8919999999998,
-      "p95_us": 12521.409650000001,
-      "min_us": 2250.789,
-      "max_us": 15625.114,
+      "median_us": 3283.3239999999996,
+      "mean_us": 3392.3553899999997,
+      "stdev_us": 660.7708726112061,
+      "iqr_us": 304.9549999999999,
+      "p95_us": 4087.7081,
+      "min_us": 2852.91,
+      "max_us": 10192.148,
       "case": "openssl_oqs",
       "command": "openssl version"
     }
   ],
-  "provider_load_cost_us": 1420.5235000000002,
+  "provider_load_cost_us": 1807.7709999999997,
   "inflation_vs_in_process_verify": [
     {
       "algorithm": "ECDSA-P256",
       "in_process_verify_median_us": 48.7775,
-      "single_openssl_invocation_median_us": 1379.6689999999999,
-      "inflation_factor": 28.284946953000865
+      "single_openssl_invocation_median_us": 1475.5529999999999,
+      "inflation_factor": 30.250689354722972
     },
     {
       "algorithm": "ML-DSA-65",
       "in_process_verify_median_us": 28.139,
-      "single_openssl_invocation_median_us": 1379.6689999999999,
-      "inflation_factor": 49.030491488681186
+      "single_openssl_invocation_median_us": 1475.5529999999999,
+      "inflation_factor": 52.43800419346814
     },
     {
       "algorithm": "Falcon-512",
       "in_process_verify_median_us": 25.7515,
-      "single_openssl_invocation_median_us": 1379.6689999999999,
-      "inflation_factor": 53.576257693726575
+      "single_openssl_invocation_median_us": 1475.5529999999999,
+      "inflation_factor": 57.2996912801196
     },
     {
       "algorithm": "SPHINCS+-SHA2-128s-simple",
       "in_process_verify_median_us": 147.4735,
-      "single_openssl_invocation_median_us": 1379.6689999999999,
-      "inflation_factor": 9.355368930689242
+      "single_openssl_invocation_median_us": 1475.5529999999999,
+      "inflation_factor": 10.00554675924827
     }
   ]
 }

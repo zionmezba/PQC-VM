@@ -1,7 +1,7 @@
 {
   "mechanism": "ML-DSA-65",
   "ec_public_key_raw_bytes": 65,
-  "ec_certificate_der_bytes": 450,
+  "ec_certificate_der_bytes": 448,
   "pqc_public_key_raw_bytes": 1952,
   "pqc_secret_key_raw_bytes": 4032,
   "pqc_certificate_der_bytes": 5461

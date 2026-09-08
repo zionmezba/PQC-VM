@@ -2,13 +2,14 @@ SHELL := /usr/bin/env bash
 IMAGE := pqc-vm
 RUN := docker run --rm -v "$(CURDIR)":/work -w /work $(IMAGE)
 
-.PHONY: image shell payloads test quick run figures clean help
+.PHONY: image shell payloads test quick run substitute figures clean help
 
 help:
 	@echo "make image      build the container (liboqs + oqs-provider, pinned)"
 	@echo "make payloads   generate data/ at exact sizes"
 	@echo "make test       correctness tests for the hybrid construction"
 	@echo "make quick      smoke run (small n) -- checks wiring, not a result"
+	@echo "make substitute substitution + mode-downgrade attacks only"
 	@echo "make run        full experiment set + figures -> results/"
 	@echo "make shell      interactive shell in the container"
 
@@ -26,6 +27,9 @@ quick: payloads
 
 run: payloads
 	$(RUN) python -m bench.run_all
+
+substitute: payloads
+	$(RUN) python -m bench.substitute --message data/msg.txt --out results
 
 figures:
 	$(RUN) python -m bench.figures
