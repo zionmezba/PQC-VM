@@ -1,8 +1,17 @@
-# Build trees (cloned + built by .devcontainer/setup.sh or the Dockerfile)
+# Build trees (cloned + built inside .devcontainer/Dockerfile)
 liboqs/
 oqs-provider/
 
-# Generated payloads, keys, artifacts, and results
+# Generated payloads, key material, artifacts, and results.
+#
+# All of it is reproducible with `make payloads && make run`, and none of it
+# belongs in a repository linked from a paper: data/ alone is ~80 MB, out/
+# contains private keys (throwaway, but still private keys), and results/ is
+# regenerated wholesale by every run. Committing them also invites a reviewer to
+# read stale numbers instead of running the pipeline.
+data/
+out/
+results/
 
 # Python
 __pycache__/
