@@ -75,18 +75,43 @@ def _openssl_cli_version() -> str:
         return f"unavailable ({type(exc).__name__})"
 
 
-def _oqs_provider_available() -> bool:
-    """True iff the openssl CLI, under the current OPENSSL_CONF, lists a PQC
-    signature algorithm. This is the switch RQ1 turns on and off."""
+def _oqs_provider_available(env: dict | None = None) -> bool:
+    """True iff the openssl CLI, under `env`, lists a PQC signature algorithm.
+
+    This is the switch RQ1 turns on and off, and it must be probed rather than
+    assumed: a misconfigured provider module path makes `openssl` skip the
+    provider silently, with exit code 0 and no diagnostic, so a run can believe
+    it is exercising the PQC-aware profile while actually running the legacy
+    one.
+    """
     try:
         r = subprocess.run(
             ["openssl", "list", "-signature-algorithms"],
-            capture_output=True, text=True, timeout=30,
+            capture_output=True, text=True, timeout=30, env=env,
         )
         return bool(re.search(r"mldsa|ml-dsa|dilithium|falcon|sphincs|slh-dsa",
                               r.stdout, re.IGNORECASE))
     except Exception:
         return False
+
+
+def _oqs_profile_probe(conf: str = "config/openssl-oqs.cnf") -> dict:
+    """Probe both OpenSSL profiles the experiments switch between.
+
+    Recording only the ambient profile is not enough: it is unset by design, so
+    it always reports False and tells a reader nothing about whether the
+    PQC-aware column in the results was real.
+    """
+    path = os.path.abspath(conf)
+    if not os.path.exists(path):
+        return {"conf_path": path, "conf_present": False, "loaded": False}
+    env = dict(os.environ)
+    env["OPENSSL_CONF"] = path
+    return {
+        "conf_path": path,
+        "conf_present": True,
+        "loaded": _oqs_provider_available(env),
+    }
 
 
 def collect() -> dict:
@@ -102,7 +127,12 @@ def collect() -> dict:
         "liboqs_python": _liboqs_python_version(),
         "openssl_cli": _openssl_cli_version(),
         "openssl_conf": os.environ.get("OPENSSL_CONF", "<unset: legacy profile>"),
+        # Ambient profile. Expected False: the container leaves OPENSSL_CONF
+        # unset so the legacy, PQC-blind verifier is what you get by default.
         "oqs_provider_loaded": _oqs_provider_available(),
+        # PQC-aware profile, probed explicitly. This is the one that has to be
+        # True for any openssl_oqs column in the results to mean anything.
+        "oqs_profile": _oqs_profile_probe(),
         "cryptography": _pkg_version("cryptography"),
         "asn1crypto": _pkg_version("asn1crypto"),
     }
