@@ -1,0 +1,1343 @@
+{
+  "environment": {
+    "timestamp_utc": "2026-09-08T13:33:57.228319+00:00",
+    "cpu_model": "12th Gen Intel(R) Core(TM) i7-12700",
+    "cpu_count_logical": 20,
+    "cpu_scaling": {
+      "governor": "unavailable",
+      "max_freq_khz": "unavailable"
+    },
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "python": "3.12.3",
+    "liboqs": "0.12.0",
+    "liboqs_python": "0.12.0",
+    "openssl_cli": "OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)",
+    "openssl_conf": "<unset: legacy profile>",
+    "oqs_provider_loaded": false,
+    "oqs_profile": {
+      "conf_path": "/work/config/openssl-oqs.cnf",
+      "conf_present": true,
+      "loaded": true
+    },
+    "cryptography": "44.0.0",
+    "asn1crypto": "1.5.1"
+  },
+  "cases": [
+    {
+      "algorithm": "ML-DSA-65",
+      "algorithm_key": "mldsa65",
+      "mode": "concat",
+      "adversary_pqc_public_bytes": 1952,
+      "substituted": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "mode_downgrade": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "content_tamper": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n800BBF4200740000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n800BBF4200740000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n80AB5F1F6A7A0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80AB5F1F6A7A0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      }
+    },
+    {
+      "algorithm": "ML-DSA-65",
+      "algorithm_key": "mldsa65",
+      "mode": "bound-attr",
+      "adversary_pqc_public_bytes": 1952,
+      "substituted": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "mode_downgrade": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "accepted": false,
+          "reason": "mode/attribute inconsistency: PQC attribute claims concat but a binding attribute is present in signedAttrs"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "content_tamper": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n807BB8652F760000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n807BB8652F760000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n804BADCE867D0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n804BADCE867D0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      }
+    },
+    {
+      "algorithm": "ML-DSA-65",
+      "algorithm_key": "mldsa65",
+      "mode": "bound-digest",
+      "adversary_pqc_public_bytes": 1952,
+      "substituted": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n807B4A1EF87D0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n807B4A1EF87D0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n805B5E6E0B730000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n805B5E6E0B730000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      },
+      "mode_downgrade": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "accepted": false,
+          "reason": "mode/attribute inconsistency: PQC attribute claims concat but a binding attribute is present in signedAttrs"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n804BF0DDED7E0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n804BF0DDED7E0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n80BB4D60057A0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80BB4D60057A0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      },
+      "content_tamper": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n801BCB26A87B0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n801BCB26A87B0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n807B004710700000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n807B004710700000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      }
+    },
+    {
+      "algorithm": "Falcon-512",
+      "algorithm_key": "falcon512",
+      "mode": "concat",
+      "adversary_pqc_public_bytes": 897,
+      "substituted": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "mode_downgrade": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "content_tamper": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n80DBC50913730000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80DBC50913730000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n80DB97630B710000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80DB97630B710000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      }
+    },
+    {
+      "algorithm": "Falcon-512",
+      "algorithm_key": "falcon512",
+      "mode": "bound-attr",
+      "adversary_pqc_public_bytes": 897,
+      "substituted": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "mode_downgrade": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "accepted": false,
+          "reason": "mode/attribute inconsistency: PQC attribute claims concat but a binding attribute is present in signedAttrs"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "content_tamper": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n804B88B6BA7B0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n804B88B6BA7B0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n803B66C43B700000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n803B66C43B700000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      }
+    },
+    {
+      "algorithm": "Falcon-512",
+      "algorithm_key": "falcon512",
+      "mode": "bound-digest",
+      "adversary_pqc_public_bytes": 897,
+      "substituted": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n802B1E3334730000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n802B1E3334730000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n803B6C264F7B0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n803B6C264F7B0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      },
+      "mode_downgrade": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "accepted": false,
+          "reason": "mode/attribute inconsistency: PQC attribute claims concat but a binding attribute is present in signedAttrs"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n800BB6DF4F780000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n800BB6DF4F780000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n807BEC82D57D0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n807BEC82D57D0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      },
+      "content_tamper": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n809B8659E8780000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n809B8659E8780000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n807BFCC166780000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n807BFCC166780000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      }
+    },
+    {
+      "algorithm": "SPHINCS+-SHA2-128s-simple",
+      "algorithm_key": "sphincs128s",
+      "mode": "concat",
+      "adversary_pqc_public_bytes": 32,
+      "substituted": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "mode_downgrade": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "content_tamper": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": false,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n800B422BCE760000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n800B422BCE760000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n803B811E33700000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n803B811E33700000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      }
+    },
+    {
+      "algorithm": "SPHINCS+-SHA2-128s-simple",
+      "algorithm_key": "sphincs128s",
+      "mode": "bound-attr",
+      "adversary_pqc_public_bytes": 32,
+      "substituted": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "mode_downgrade": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: both halves valid"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "accepted": false,
+          "reason": "mode/attribute inconsistency: PQC attribute claims concat but a binding attribute is present in signedAttrs"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": true,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": true,
+          "reason": "accepted: valid RFC 5652 SignedData"
+        },
+        "openssl_legacy": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        },
+        "openssl_oqs": {
+          "accepted": true,
+          "returncode": 0,
+          "detail": "CMS Verification successful"
+        }
+      },
+      "content_tamper": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "bound-attr",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n800B62B85C730000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n800B62B85C730000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n807B9AE205700000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n807B9AE205700000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      }
+    },
+    {
+      "algorithm": "SPHINCS+-SHA2-128s-simple",
+      "algorithm_key": "sphincs128s",
+      "mode": "bound-digest",
+      "adversary_pqc_public_bytes": 32,
+      "substituted": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n800B45D65F740000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n800B45D65F740000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n80FBE870697F0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80FBE870697F0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      },
+      "mode_downgrade": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "concat",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": true,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "concat",
+          "accepted": false,
+          "reason": "mode/attribute inconsistency: PQC attribute claims concat but a binding attribute is present in signedAttrs"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n804BD3586B7B0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n804BD3586B7B0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n80BB2154607D0000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n80BB2154607D0000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      },
+      "content_tamper": {
+        "hybrid_policy": {
+          "policy": "hybrid",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "hybrid_hardened": {
+          "policy": "hybrid_hardened",
+          "mode": "bound-digest",
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": false,
+          "binding_ok": false,
+          "accepted": false,
+          "reason": "one or more checks failed"
+        },
+        "classical_policy": {
+          "policy": "classical",
+          "mode": null,
+          "pqc_attribute_present": true,
+          "binding_attribute_present": true,
+          "content_digest_ok": false,
+          "classical_ok": true,
+          "pqc_ok": null,
+          "binding_ok": null,
+          "accepted": false,
+          "reason": "messageDigest does not match H(content)"
+        },
+        "openssl_legacy": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n800B523BF7700000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n800B523BF7700000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        },
+        "openssl_oqs": {
+          "accepted": false,
+          "returncode": 4,
+          "detail": "CMS Verification failure\n804B75707C720000:error:1700009E:CMS routines:CMS_SignerInfo_verify_content:verification failure:../crypto/cms/cms_sd.c:988:\n804B75707C720000:error:1700006D:CMS routines:CMS_verify:content verify error:../crypto/cms/cms_smime.c:457:"
+        }
+      }
+    }
+  ],
+  "message_bytes": 39
+}

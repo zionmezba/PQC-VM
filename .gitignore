@@ -2,16 +2,19 @@
 liboqs/
 oqs-provider/
 
-# Generated payloads, key material, artifacts, and results.
-#
-# All of it is reproducible with `make payloads && make run`, and none of it
-# belongs in a repository linked from a paper: data/ alone is ~80 MB, out/
-# contains private keys (throwaway, but still private keys), and results/ is
-# regenerated wholesale by every run. Committing them also invites a reviewer to
-# read stale numbers instead of running the pipeline.
+# Generated payloads and key material. Both are reproducible with
+# `make payloads && make run`, and neither belongs in a repository linked from a
+# paper: data/ is ~80 MB of random bytes, and out/ holds private keys
+# (throwaway, but still private keys).
 data/
 out/
-results/
+
+# results/ is deliberately NOT ignored. The figures and JSON in it are the
+# numbers the manuscript cites, so they are committed as the record of the run
+# that produced them -- every file there carries the same environment block and
+# timestamp. Regenerate the whole directory with `make clean && make run`;
+# never hand-edit or refresh one file out of it, because the value of the
+# directory is that its files agree with each other.
 
 # Python
 __pycache__/

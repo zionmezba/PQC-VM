@@ -100,9 +100,15 @@ def main(argv=None) -> int:
         print("\n[5/5] figures skipped")
         return 0
     print("\n[5/5] figures")
-    from . import figures
-    figures.main(["--results", args.out,
-                  "--out", str(Path(args.out) / "figures")])
+    from . import figures, paper_figures
+    figdir = str(Path(args.out) / "figures")
+    # Two figure sets, deliberately both: figures.py renders the exploratory
+    # PNGs used to read the data, paper_figures.py the vector PDFs that go into
+    # the manuscript. They are not substitutes for one another, and generating
+    # them from the same results in the same session is what keeps a figure in
+    # the paper traceable to the run that produced it.
+    figures.main(["--results", args.out, "--out", figdir])
+    paper_figures.main(["--results", args.out, "--out", figdir])
     return 0
 
 
