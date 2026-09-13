@@ -29,7 +29,8 @@ make run        # full experiment set + figures -> results/
 | `results/cli_overhead.json` | process-launch cost, measured deliberately |
 | `results/separability.json` | hybrid artifacts, verdict matrix, byte accounting |
 | `results/summary.csv` | every figure's underlying table |
-| `results/figures/*.png` | the four figures |
+| `results/figures/*.png` | the four exploratory figures |
+| `results/figures/*.pdf` | the manuscript figures, vector |
 
 ## How the measurements are taken
 
@@ -56,6 +57,30 @@ SPHINCS+-128s signing is where this matters.
 **Sizes are labelled by what they count.** Raw signature bytes, DER certificate
 bytes, and full CMS container bytes are separate columns and separate figure
 series. Key sizes are raw key bytes, not PEM file sizes on disk.
+
+## Figures for the manuscript
+
+`results/figures/` carries two sets and they are not substitutes for one
+another. [`bench/figures.py`](bench/figures.py) renders the exploratory PNGs
+used to read the data. [`bench/paper_figures.py`](bench/paper_figures.py) and
+[`bench/paper_methodology.py`](bench/paper_methodology.py) render the vector
+PDFs that go into the paper: 8pt serif against IEEEtran's 10pt Times, no
+titles (IEEE uses captions), TrueType-embedded, and legible in greyscale,
+because print review copies are not colour.
+
+`fig_method.pdf` is the methodology figure — double column, two panels. Panel
+(a) is the artifact: what the ECDSA signature covers, what it does not, and
+the single value that differs between the three modes. Panel (b) is the
+evaluation design: five artifact states through five verifiers, with the cells
+each claim rests on boxed and the control row shaded. It carries no verdicts;
+those belong to the tables generated from `separability.json` and
+`substitution.json`, and duplicating them in a figure only invites the two to
+disagree. It is drawn from the design, not from a results file, so it is
+regenerated on every run to keep it from drifting from the code it depicts:
+
+```bash
+python -m bench.paper_methodology --out results/figures
+```
 
 ## The CLI-overhead result
 

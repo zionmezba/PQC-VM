@@ -100,7 +100,7 @@ def main(argv=None) -> int:
         print("\n[5/5] figures skipped")
         return 0
     print("\n[5/5] figures")
-    from . import figures, paper_figures
+    from . import figures, paper_figures, paper_methodology
     figdir = str(Path(args.out) / "figures")
     # Two figure sets, deliberately both: figures.py renders the exploratory
     # PNGs used to read the data, paper_figures.py the vector PDFs that go into
@@ -109,6 +109,11 @@ def main(argv=None) -> int:
     # the paper traceable to the run that produced it.
     figures.main(["--results", args.out, "--out", figdir])
     paper_figures.main(["--results", args.out, "--out", figdir])
+    # The methodology figure describes the experimental design rather than the
+    # measurements, so it takes no --results. It is rendered here anyway: a
+    # design figure that drifts from the code it depicts is worse than none,
+    # and regenerating it with every run is what stops that.
+    paper_methodology.main(["--out", figdir])
     return 0
 
 
